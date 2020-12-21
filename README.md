@@ -25,3 +25,8 @@ For the final question we run the two simulations for Xeon and ARM A9. We found 
 Xeon -> 72.9199\*x + 36.8318\*40\*x = 1546.1959\*x  
 A9 -> (2.96053+0.108687)\*40\*x = 122.76868\*x
 It is quite apparent that since the _Leakage power_ of Xeon is consistently larger than the overall power drain of A9, we could never achieve a more efficient usage of the Xeon processor if that CPU has to operate for the same amount of time as A9.
+
+## Answer 2:
+We run the McPAT for the previous simulations. For each of the simulations , only one variable was being changed at a time, while the rest of them keeping their default value. We did this so that we could clearly see the impact of each variable in EDP , in the Area and in the Peak Dynamic.
+The EDP graphs follow:
+![Bzip EDP]/Graphs/EDPBzip
