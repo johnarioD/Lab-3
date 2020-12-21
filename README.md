@@ -29,4 +29,35 @@ It is quite apparent that since the _Leakage power_ of Xeon is consistently larg
 ## Answer 2:
 We run the McPAT for the previous simulations. For each of the simulations , only one variable was being changed at a time, while the rest of them were keeping their default value. We did this so that we could clearly see the impact of each variable in EDP , in the Area and in the Peak Dynamic.
 The EDP graphs follow:
-![](Graphs/EDPBzip)
+![](Graphs/EDPBzip.png)
+![](Graphs/EDPMcf.png)
+![](Graphs/EDPSjeng.png)
+![](Graphs/EDPLibm.png)
+If we assume that the variables are lighlty dependent on each other, then we can safely deduce which values ,those characteristics should take in order to get the best EDP.  
+Here are the results:  
+|       | DCacheSize | ICacheSize | L2CacheSize | DCache Assoc | ICache Assoc | L2Cache Assoc | CacheLineSize | EDP       |
+|-------|------------|------------|-------------|--------------|--------------|---------------|---------------|-----------|
+| Bzip  | 32kB       | 8kB        | 4MB         | 2            | 4            | 32            | 32            | 0.0210738 |
+| Mcf   | 32kB       | 32kB       | 2MB         | 1            | 4            | 2             | 64            | placeholder |
+| Sjeng | 8kB        | 8kB        | 256kB       | 1            | 4            | 2             | 128           | 0.291276  |
+| Libm  | 32kB       | 8kB        | 256kB       | 2            | 4            | 8             | 128           | 0.0584338 |
+
+In order to prove that these values are the best for the lowest EDP we run some additional simulations with the gem5 program and then we used the McPAT to get the needed information. We came to this conlusion, that the processor characteristics are not so lightly dependent as we initially thought and the aforementioned best characteristics ,while lowering the EDP to a great extent, are not really the best.  
+The Peak Dynamic and Area graphs follow.
+![](Graphs/PeakBzip.png)
+![](Graphs/PeakMcf.png)
+![](Graphs/PeakSjeng.png)
+![](Graphs/PeakLibm.png)
+![](Graphs/AreaBzip.png)
+![](Graphs/AreaMcf.png)
+![](Graphs/AreaSjeng.png)
+![](Graphs/AreaLibm.png)
+We noticed that the Area graphs are the same for every benchmark, which is logical ,since the hardware should not be affected by the software.
+
+The output of the McPAT program could have a significant error if the provided CPU model was incomplete or high lever. Another source of error could that the "ARM" template assumes that certain stuctures exist in the CPU in consideration, while they do not. In the first case, where the cpu model is lacking , the McPAT models only a subset of the total area and the power of a component. This subset consists of caches, CAMs and SRAM array based structures and lacks control units. 
+As for the question if using two programs examining different aspects of the same system could result in an error, we think that this could be the case , since each program could use different techniques and models to describe the same system , resulting in an incoherent output.
+https://www.samxi.org/papers/xi_hpca2015.pdf
+https://www.researchgate.net/publication/228674742_McPAT_10_An_Integrated_Power_Area_and_Timing_Modeling_Framework_for_Multicore_Architecture
+
+
+
