@@ -43,7 +43,7 @@ Here are the results:
 | Libm  | 32kB       | 8kB        | 256kB       | 2            | 4            | 8             | 128           | 0.0584338 |
   
 In order to prove that these values are the best for the lowest EDP we run some additional simulations with the gem5 program and then we used the McPAT to get the needed information. We came to this conlusion, that the processor characteristics are not so lightly dependent as we initially thought and the aforementioned best characteristics ,while lowering the EDP to a great extent, are not really the best.  
-The Peak Dynamic and Area graphs follow.
+The Peak Dynamic and Area graphs follow.  
 ![](Graphs/PeakBzip.png)
 ![](Graphs/PeakMcf.png)
 ![](Graphs/PeakSjeng.png)
