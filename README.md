@@ -60,4 +60,5 @@ https://www.samxi.org/papers/xi_hpca2015.pdf
 https://www.researchgate.net/publication/228674742_McPAT_10_An_Integrated_Power_Area_and_Timing_Modeling_Framework_for_Multicore_Architecture
 
 
-
+## Comments:  
+We found out that for each value of the variable "Cache line size" , we got the same Peak Dynamic value in every benchmark.
