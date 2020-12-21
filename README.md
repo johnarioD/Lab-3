@@ -32,7 +32,7 @@ The EDP graphs follow:
 ![](Graphs/EDPBzip.png)
 ![](Graphs/EDPMcf.png)
 ![](Graphs/EDPSjeng.png)
-![](Graphs/EDPLibm.png)
+![](Graphs/EDPLibm.png)  
 If we assume that the variables are lighlty dependent on each other, then we can safely deduce which values ,those characteristics should take in order to get the best EDP.  
 Here are the results:  
 |       | DCacheSize | ICacheSize | L2CacheSize | DCache Assoc | ICache Assoc | L2Cache Assoc | CacheLineSize | EDP       |
@@ -41,7 +41,7 @@ Here are the results:
 | Mcf   | 32kB       | 32kB       | 2MB         | 1            | 4            | 2             | 64            | placeholder |
 | Sjeng | 8kB        | 8kB        | 256kB       | 1            | 4            | 2             | 128           | 0.291276  |
 | Libm  | 32kB       | 8kB        | 256kB       | 2            | 4            | 8             | 128           | 0.0584338 |
-
+  
 In order to prove that these values are the best for the lowest EDP we run some additional simulations with the gem5 program and then we used the McPAT to get the needed information. We came to this conlusion, that the processor characteristics are not so lightly dependent as we initially thought and the aforementioned best characteristics ,while lowering the EDP to a great extent, are not really the best.  
 The Peak Dynamic and Area graphs follow.
 ![](Graphs/PeakBzip.png)
@@ -51,7 +51,7 @@ The Peak Dynamic and Area graphs follow.
 ![](Graphs/AreaBzip.png)
 ![](Graphs/AreaMcf.png)
 ![](Graphs/AreaSjeng.png)
-![](Graphs/AreaLibm.png)
+![](Graphs/AreaLibm.png)  
 We noticed that the Area graphs are the same for every benchmark, which is logical ,since the hardware should not be affected by the software.
 
 The output of the McPAT program could have a significant error if the provided CPU model was incomplete or high lever. Another source of error could that the "ARM" template assumes that certain stuctures exist in the CPU in consideration, while they do not. In the first case, where the cpu model is lacking , the McPAT models only a subset of the total area and the power of a component. This subset consists of caches, CAMs and SRAM array based structures and lacks control units. 
