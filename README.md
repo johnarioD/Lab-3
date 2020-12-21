@@ -33,6 +33,7 @@ The EDP graphs follow:
 ![](Graphs/EDPMcf.png)
 ![](Graphs/EDPSjeng.png)
 ![](Graphs/EDPLibm.png)  
+In an effort to make the graphs more compact , we have put every variable of each benchmark in the same graph. The DCacheSize and ICacheSize range from 2^3 to 2^7, the L2CacheSize ranges from 2^8 to 2^12 , the Associativities from 2^0 to 2^5 and the Cache Line Size from 2^4 to 2^8. We can notice the associativities have one value more than the other variables, so we duplicated the last value of the rest of the vaiables to fit in the same graph.
 If we assume that the variables are lighlty dependent on each other, then we can safely deduce which values ,those characteristics should take in order to get the best EDP.  
 Here are the results:  
 |       | DCacheSize | ICacheSize | L2CacheSize | DCache Assoc | ICache Assoc | L2Cache Assoc | CacheLineSize | EDP       |
