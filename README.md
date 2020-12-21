@@ -39,7 +39,7 @@ Here are the results:
 |       | DCacheSize | ICacheSize | L2CacheSize | DCache Assoc | ICache Assoc | L2Cache Assoc | CacheLineSize | EDP       |
 |-------|------------|------------|-------------|--------------|--------------|---------------|---------------|-----------|
 | Bzip  | 32kB       | 8kB        | 4MB         | 2            | 4            | 32            | 32            | 0.0210738 |
-| Mcf   | 32kB       | 32kB       | 2MB         | 1            | 4            | 2             | 64            | placeholder |
+| Mcf   | 32kB       | 32kB       | 2MB         | 1            | 4            | 2             | 64            | 0.0115828 |
 | Sjeng | 8kB        | 8kB        | 256kB       | 1            | 4            | 2             | 128           | 0.291276  |
 | Libm  | 32kB       | 8kB        | 256kB       | 2            | 4            | 8             | 128           | 0.0584338 |
   
