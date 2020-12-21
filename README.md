@@ -55,10 +55,12 @@ The Peak Dynamic and Area graphs follow.
 We noticed that the Area graphs are the same for every benchmark, which is logical ,since the hardware should not be affected by the software.
 
 The output of the McPAT program could have a significant error if the provided CPU model was incomplete or high lever. Another source of error could that the "ARM" template assumes that certain stuctures exist in the CPU in consideration, while they do not. In the first case, where the cpu model is lacking , the McPAT models only a subset of the total area and the power of a component. This subset consists of caches, CAMs and SRAM array based structures and lacks control units. 
-As for the question if using two programs examining different aspects of the same system could result in an error, we think that this could be the case , since each program could use different techniques and models to describe the same system , resulting in an incoherent output.
-https://www.samxi.org/papers/xi_hpca2015.pdf
-https://www.researchgate.net/publication/228674742_McPAT_10_An_Integrated_Power_Area_and_Timing_Modeling_Framework_for_Multicore_Architecture
+As for the question if using two programs examining different aspects of the same system could result in an error, we think that this could be the case , since each program could use different techniques and models to describe the same system , resulting in an incoherent output.  
+_(https://www.samxi.org/papers/xi_hpca2015.pdf  ,
+https://www.researchgate.net/publication/228674742_McPAT_10_An_Integrated_Power_Area_and_Timing_Modeling_Framework_for_Multicore_Architecture,  
+https://ieeexplore.ieee.org/document/7056064)_
 
 
+  
 ## Comments:  
 We found out that for each value of the variable "Cache line size" , we got the same Peak Dynamic value in every benchmark.
